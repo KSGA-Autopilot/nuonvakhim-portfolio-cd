@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nuonvakhim-portfolio
-          image: kshrdautopilot/nuonvakhim-portfolio
+          image: kshrdautopilot/nuonvakhim-portfolio:2023-12-04-09-00-36
           ports:
             - containerPort: 3000
