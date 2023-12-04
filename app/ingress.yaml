@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nuonvakhim-portfolio-ingress
+  namespace: nuonvakhim
+spec:
+  tls:
+    - hosts:
+        - autopilot18.hanyeaktong.site
+      secretName: autopilot18-hanyeaktong-site-cert
+  rules:
+    - host: autopilot18.hanyeaktong.site
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: nuonvakhim-portfolio-svc
+                port:
+                  number: 3000
