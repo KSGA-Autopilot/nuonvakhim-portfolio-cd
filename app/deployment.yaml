@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nuonvakhim-portfolio-deployment
+  labels:
+    app: nuonvakhim-portfolio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nuonvakhim-portfolio
+  template:
+    metadata:
+      labels:
+        app: nuonvakhim-portfolio
+    spec:
+      containers:
+        - name: nuonvakhim-portfolio
+          image: kshrdautopilot/nuonvakhim-portfolio
+          ports:
+            - containerPort: 3000
